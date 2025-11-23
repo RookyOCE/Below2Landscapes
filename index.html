@@ -1,451 +1,504 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rotorua Property Maintenance | Professional Cleaning & Gardening</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Rotorua Property Maintenance | Professional Cleaning & Gardening
+    </title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
 
-        .hero {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-            color: white;
-            padding: 100px 20px 80px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
+      .hero {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+        color: white;
+        padding: 100px 20px 80px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
 
-        .logo {
-            max-width: 200px;
-            margin: 0 auto 30px;
-            animation: fadeInUp 0.8s ease;
-        }
+      .logo {
+        max-width: 200px;
+        margin: 0 auto 30px;
+        animation: fadeInUp 0.8s ease;
+      }
 
-        .logo img {
-            width: 100%;
-            height: auto;
-            border-radius: 50%;
-        }
+      .logo img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+      }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
-            opacity: 0.3;
-        }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+        opacity: 0.3;
+      }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin: 0 auto;
+      }
 
+      .hero h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+        animation: fadeInUp 0.8s ease;
+      }
+
+      .hero p {
+        font-size: 1.3em;
+        margin-bottom: 30px;
+        animation: fadeInUp 0.8s ease 0.2s both;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: #4a7cb8;
+        color: white;
+        padding: 15px 40px;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 1.1em;
+        transition: transform 0.3s, box-shadow 0.3s;
+        animation: fadeInUp 0.8s ease 0.4s both;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(74, 124, 184, 0.4);
+        background: #5a8cc8;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 80px 20px;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 50px;
+        color: #4a7cb8;
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .service-card {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-align: center;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .service-icon {
+        font-size: 3em;
+        margin-bottom: 20px;
+      }
+
+      .service-card h3 {
+        color: #4a7cb8;
+        margin-bottom: 15px;
+        font-size: 1.5em;
+      }
+
+      .gallery {
+        background: #f8f9fa;
+      }
+
+      .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-top: 40px;
+      }
+
+      .photo-item {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        background: #ddd;
+        aspect-ratio: 4/3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2em;
+        color: #666;
+        transition: transform 0.3s;
+      }
+
+      .photo-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .photo-item:hover {
+        transform: scale(1.05);
+      }
+
+      .photo-label {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: #4a7cb8;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 25px;
+        font-weight: bold;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .about {
+        background: white;
+        color: #333;
+      }
+
+      .about .section-title {
+        color: #4a7cb8;
+      }
+
+      .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 1.2em;
+        line-height: 1.8;
+      }
+
+      .contact {
+        text-align: center;
+      }
+
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+      }
+
+      .contact-item {
+        background: #f8f9fa;
+        padding: 30px;
+        border-radius: 15px;
+        min-width: 250px;
+      }
+
+      .contact-item h3 {
+        color: #4a7cb8;
+        margin-bottom: 10px;
+      }
+
+      footer {
+        background: #1a1a1a;
+        color: white;
+        text-align: center;
+        padding: 30px 20px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        animation: fadeIn 0.3s ease;
+      }
+
+      .modal-content {
+        background-color: white;
+        margin: 10% auto;
+        padding: 40px;
+        border-radius: 20px;
+        max-width: 500px;
+        text-align: center;
+        animation: slideIn 0.3s ease;
+        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+      }
+
+      .modal-content h2 {
+        color: #4a7cb8;
+        margin-bottom: 30px;
+      }
+
+      .contact-details {
+        background: #f8f9fa;
+        padding: 30px;
+        border-radius: 15px;
+        margin: 20px 0;
+      }
+
+      .contact-details p {
+        font-size: 1.2em;
+        margin: 15px 0;
+        color: #333;
+      }
+
+      .contact-details a {
+        color: #4a7cb8;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .contact-details a:hover {
+        text-decoration: underline;
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+
+      .close:hover {
+        color: #333;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
         .hero h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            animation: fadeInUp 0.8s ease;
+          font-size: 2em;
         }
-
         .hero p {
-            font-size: 1.3em;
-            margin-bottom: 30px;
-            animation: fadeInUp 0.8s ease 0.2s both;
+          font-size: 1.1em;
         }
-
-        .cta-button {
-            display: inline-block;
-            background: #4a7cb8;
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: transform 0.3s, box-shadow 0.3s;
-            animation: fadeInUp 0.8s ease 0.4s both;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(74, 124, 184, 0.4);
-            background: #5a8cc8;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 20px;
-        }
-
         .section-title {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 50px;
-            color: #4a7cb8;
+          font-size: 2em;
         }
-
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .service-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .service-icon {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            color: #4a7cb8;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-
-        .gallery {
-            background: #f8f9fa;
-        }
-
-        .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .photo-item {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            background: #ddd;
-            aspect-ratio: 4/3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2em;
-            color: #666;
-            transition: transform 0.3s;
-        }
-
-        .photo-item:hover {
-            transform: scale(1.05);
-        }
-
-        .photo-label {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: #4a7cb8;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .about {
-            background: white;
-            color: #333;
-        }
-        
-        .about .section-title {
-            color: #4a7cb8;
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 1.2em;
-            line-height: 1.8;
-        }
-
-        .contact {
-            text-align: center;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .contact-item {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            min-width: 250px;
-        }
-
-        .contact-item h3 {
-            color: #4a7cb8;
-            margin-bottom: 10px;
-        }
-
-        footer {
-            background: #1a1a1a;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.7);
-            animation: fadeIn 0.3s ease;
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 10% auto;
-            padding: 40px;
-            border-radius: 20px;
-            max-width: 500px;
-            text-align: center;
-            animation: slideIn 0.3s ease;
-            box-shadow: 0 10px 50px rgba(0,0,0,0.3);
-        }
-
-        .modal-content h2 {
-            color: #4a7cb8;
-            margin-bottom: 30px;
-        }
-
-        .contact-details {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            margin: 20px 0;
-        }
-
-        .contact-details p {
-            font-size: 1.2em;
-            margin: 15px 0;
-            color: #333;
-        }
-
-        .contact-details a {
-            color: #4a7cb8;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .contact-details a:hover {
-            text-decoration: underline;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .close:hover {
-            color: #333;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2em;
-            }
-            .hero p {
-                font-size: 1.1em;
-            }
-            .section-title {
-                font-size: 2em;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="hero">
-        <div class="hero-content">
-            <div class="logo">
-                <img src="images/logo.jpeg" alt="Below 2 Landscapes">
-            </div>
-            <h1>Transform Your Property This Summer</h1>
-            <p>Professional gardening, gutter cleaning, and water blasting services in Bay of Plenty</p>
-            <a href="#" class="cta-button" onclick="openModal(); return false;">Get a Free Quote</a>
+      <div class="hero-content">
+        <div class="logo">
+          <img src="images/logo.jpeg" alt="Below 2 Landscapes" />
         </div>
+        <h1>Transform Your Property This Summer</h1>
+        <p>
+          Professional gardening, gutter cleaning, and water blasting services
+          in Bay of Plenty
+        </p>
+        <a href="#" class="cta-button" onclick="openModal(); return false;"
+          >Get a Free Quote</a
+        >
+      </div>
     </div>
 
     <div class="container">
-        <h2 class="section-title">Our Services</h2>
-        <div class="services">
-            <div class="service-card">
-                <div class="service-icon">🌿</div>
-                <h3>Gardening</h3>
-                <p>Complete garden maintenance, lawn mowing, hedge trimming, weeding, and planting. We'll keep your outdoor space looking pristine.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🏠</div>
-                <h3>Gutter Cleaning</h3>
-                <p>Thorough gutter and downpipe cleaning to protect your property from water damage. Safe and efficient service.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">💦</div>
-                <h3>Water Blasting</h3>
-                <p>Professional water blasting for driveways, pathways, decks, and exterior surfaces. Restore your property's appearance.</p>
-            </div>
+      <h2 class="section-title">Our Services</h2>
+      <div class="services">
+        <div class="service-card">
+          <div class="service-icon">🌿</div>
+          <h3>Gardening</h3>
+          <p>
+            Complete garden maintenance, lawn mowing, hedge trimming, weeding,
+            and planting. We'll keep your outdoor space looking pristine.
+          </p>
         </div>
+        <div class="service-card">
+          <div class="service-icon">🏠</div>
+          <h3>Gutter Cleaning</h3>
+          <p>
+            Thorough gutter and downpipe cleaning to protect your property from
+            water damage. Safe and efficient service.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💦</div>
+          <h3>Water Blasting</h3>
+          <p>
+            Professional water blasting for driveways, pathways, decks, and
+            exterior surfaces. Restore your property's appearance.
+          </p>
+        </div>
+      </div>
     </div>
 
     <div class="gallery container">
-        <h2 class="section-title">Our Work</h2>
-        <div class="photo-grid">
-            <div class="photo-item">
-                <span>Photo 1</span>
-                <div class="photo-label">Before</div>
-            </div>
-            <div class="photo-item">
-                <span>Photo 2</span>
-                <div class="photo-label">After</div>
-            </div>
-            <div class="photo-item">
-                <span>Photo 3</span>
-                <div class="photo-label">Before</div>
-            </div>
-            <div class="photo-item">
-                <span>Photo 4</span>
-                <div class="photo-label">After</div>
-            </div>
-            <div class="photo-item">
-                <span>Photo 5</span>
-                <div class="photo-label">Before</div>
-            </div>
-            <div class="photo-item">
-                <span>Photo 6</span>
-                <div class="photo-label">After</div>
-            </div>
+      <h2 class="section-title">Our Work</h2>
+      <div class="photo-grid">
+        <div class="photo-item">
+          <img src="images/before1.jpeg" alt="Before Photo 1" />
+          <div class="photo-label">Before</div>
         </div>
+        <div class="photo-item">
+          <img src="images/after1.jpeg" alt="Before Photo 1" />
+          <div class="photo-label">After</div>
+        </div>
+        <div class="photo-item">
+          <img src="images/before2.jpeg" alt="Before Photo 1" />
+          <div class="photo-label">Before</div>
+        </div>
+        <div class="photo-item">
+          <img src="images/after2.jpeg" alt="Before Photo 1" />
+          <div class="photo-label">After</div>
+        </div>
+        <div class="photo-item">
+          <img src="images/before3.jpeg" alt="Before Photo 1" />
+          <div class="photo-label">Before</div>
+        </div>
+        <div class="photo-item">
+          <img src="images/after3.jpeg" alt="Before Photo 1" />
+          <div class="photo-label">After</div>
+        </div>
+      </div>
     </div>
 
     <div class="about container">
-        <h2 class="section-title">About Us</h2>
-        <div class="about-content">
-            <p>We're two experienced lads offering professional property maintenance services in Rotorua. We take pride in delivering quality work and ensuring every job is done right.</p>
-            <p>With attention to detail and competitive rates, we're here to make your property look its best. No job is too big or too small!</p>
-        </div>
+      <h2 class="section-title">About Us</h2>
+      <div class="about-content">
+        <p>
+          We're two experienced lads offering professional property maintenance
+          services in Rotorua. We take pride in delivering quality work and
+          ensuring every job is done right.
+        </p>
+        <p>
+          With attention to detail and competitive rates, we're here to make
+          your property look its best. No job is too big or too small!
+        </p>
+      </div>
     </div>
 
     <div class="contact container" id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <p style="font-size: 1.2em; margin-bottom: 30px;">Ready to transform your property? Contact us for a free, no-obligation quote!</p>
-        <a href="#" class="cta-button" onclick="openModal(); return false;" style="display: inline-block; margin-top: 20px;">Contact Us</a>
+      <h2 class="section-title">Get In Touch</h2>
+      <p style="font-size: 1.2em; margin-bottom: 30px">
+        Ready to transform your property? Contact us for a free, no-obligation
+        quote!
+      </p>
+      <a
+        href="#"
+        class="cta-button"
+        onclick="openModal(); return false;"
+        style="display: inline-block; margin-top: 20px"
+        >Contact Us</a
+      >
     </div>
 
-    <div id="quoteModal" class="modal" onclick="closeModalOnOutsideClick(event)">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Get Your Free Quote</h2>
-            <div class="contact-details">
-                <p><strong>📧 Email</strong></p>
-                <p><a href="mailto:below2landscapes@gmail.com">below2landscapes@gmail.com</a></p>
-                <p><strong>📱 Phone</strong></p>
-                <p><a href="tel:0272682066">027 268 2066</a></p>
-                <p><a href="tel:0272312519">027 231 2519</a></p>
-            </div>
-            <p style="color: #666; margin-top: 20px;">We'll get back to you as soon as possible!</p>
+    <div
+      id="quoteModal"
+      class="modal"
+      onclick="closeModalOnOutsideClick(event)"
+    >
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Get Your Free Quote</h2>
+        <div class="contact-details">
+          <p><strong>📧 Email</strong></p>
+          <p>
+            <a href="mailto:below2landscapes@gmail.com"
+              >below2landscapes@gmail.com</a
+            >
+          </p>
+          <p><strong>📱 Phone</strong></p>
+          <p><a href="tel:0272682066">027 268 2066</a></p>
+          <p><a href="tel:0272312519">027 231 2519</a></p>
         </div>
+        <p style="color: #666; margin-top: 20px">
+          We'll get back to you as soon as possible!
+        </p>
+      </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 Below 2 Landscapes | Professional & Reliable Service</p>
+      <p>&copy; 2024 Below 2 Landscapes | Professional & Reliable Service</p>
     </footer>
 
     <script>
-        function openModal() {
-            document.getElementById('quoteModal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
+      function openModal() {
+        document.getElementById("quoteModal").style.display = "block";
+        document.body.style.overflow = "hidden";
+      }
 
-        function closeModal() {
-            document.getElementById('quoteModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
+      function closeModal() {
+        document.getElementById("quoteModal").style.display = "none";
+        document.body.style.overflow = "auto";
+      }
 
-        function closeModalOnOutsideClick(event) {
-            if (event.target.id === 'quoteModal') {
-                closeModal();
-            }
+      function closeModalOnOutsideClick(event) {
+        if (event.target.id === "quoteModal") {
+          closeModal();
         }
+      }
 
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeModal();
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
